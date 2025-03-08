@@ -36,7 +36,7 @@ exports.analyzeContrast = async (req, res) => {
     const issues = [];
     
     for (const pair of colorPairs) {
-      const ratio = wcagContrast.ratio(pair.foreground, pair.background);
+      const ratio = wcagContrast.hex(pair.foreground, pair.background);
       const required = pair.isLargeText ? 4.5 : 7; // AAA requires 4.5:1 for large text, 7:1 for normal text
       
       if (ratio < required) {
@@ -81,13 +81,14 @@ exports.suggestColors = async (req, res) => {
     }
 
     const suggestion = suggestBetterColor(foreground, background, required);
-    const newRatio = wcagContrast.ratio(suggestion, background);
+    const newRatio = wcagContrast.hex(suggestion, background);
+    const originalRatio = wcagContrast.hex(foreground, background);
     
     return res.status(200).json({
       original: {
         foreground,
         background,
-        ratio: parseFloat(wcagContrast.ratio(foreground, background).toFixed(2)),
+        ratio: parseFloat(originalRatio.toFixed(2)),
       },
       improved: {
         foreground: suggestion,
@@ -117,7 +118,7 @@ exports.checkContrastRatio = async (req, res) => {
       return res.status(400).json({ error: 'Foreground and background colors are required' });
     }
 
-    const ratio = wcagContrast.ratio(foreground, background);
+    const ratio = wcagContrast.hex(foreground, background);
     
     return res.status(200).json({
       foreground,
@@ -176,7 +177,7 @@ function suggestBetterColor(foreground, background, required) {
     let newColor = fgColor.clone();
     
     // Get the current contrast ratio
-    let ratio = wcagContrast.ratio(newColor.toHexString(), bgColor.toHexString());
+    let ratio = wcagContrast.hex(newColor.toHexString(), bgColor.toHexString());
     
     // If the contrast is already sufficient, return the original color
     if (ratio >= required) {
@@ -199,7 +200,7 @@ function suggestBetterColor(foreground, background, required) {
         newColor = newColor.lighten(adjustmentAmount * 100);
       }
       
-      ratio = wcagContrast.ratio(newColor.toHexString(), bgColor.toHexString());
+      ratio = wcagContrast.hex(newColor.toHexString(), bgColor.toHexString());
       iterations++;
       
       // Increase adjustment amount if we're not making progress fast enough
@@ -219,4 +220,7 @@ function suggestBetterColor(foreground, background, required) {
     // This would be implemented for cases where adjusting the background is preferred
     return foreground; // Placeholder
   }
-} 
+}
+
+// Export suggestBetterColor function for testing
+module.exports.suggestBetterColor = suggestBetterColor; 

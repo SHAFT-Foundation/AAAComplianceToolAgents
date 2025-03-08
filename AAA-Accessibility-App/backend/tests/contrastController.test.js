@@ -12,14 +12,14 @@ describe('Contrast Controller Tests', () => {
       const required = 7;  // AAA requirement for normal text
       
       // Original contrast is about 4.5:1, below AAA
-      const originalRatio = wcagContrast.ratio(foreground, background);
+      const originalRatio = wcagContrast.hex(foreground, background);
       expect(originalRatio).to.be.below(required);
       
       // Get suggested color
       const suggestedColor = contrastController.suggestBetterColor(foreground, background, required);
       
       // Check if suggested color meets requirements
-      const newRatio = wcagContrast.ratio(suggestedColor, background);
+      const newRatio = wcagContrast.hex(suggestedColor, background);
       expect(newRatio).to.be.at.least(required);
       
       console.log(`Original color: ${foreground}, ratio: ${originalRatio.toFixed(2)}`);
@@ -33,7 +33,7 @@ describe('Contrast Controller Tests', () => {
       const required = 7;  // AAA requirement for normal text
       
       // Original contrast is 21:1, well above AAA
-      const originalRatio = wcagContrast.ratio(foreground, background);
+      const originalRatio = wcagContrast.hex(foreground, background);
       expect(originalRatio).to.be.above(required);
       
       // Get suggested color

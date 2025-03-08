@@ -122,6 +122,14 @@ This will start both the backend server (on port 5000) and the frontend developm
 - Download the remediated content
 - View detailed statistics on fixed and remaining issues
 
+## Application Screenshots
+
+### Backend Health Check
+![Backend Health Check](images/Screenshot%202025-03-07%20at%209.51.43%20PM.png)
+
+### Frontend Interface
+![Frontend Interface](images/Screenshot%202025-03-07%20at%209.52.02%20PM.png)
+
 ## Integrating with Real AI Services
 
 The application includes stubs for AI services that can be replaced with real implementations:

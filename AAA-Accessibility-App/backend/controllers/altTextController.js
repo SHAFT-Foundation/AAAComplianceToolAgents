@@ -334,7 +334,7 @@ function analyzeAltTextQuality(altText, imageContext) {
       altText.toLowerCase().includes('photo of')
     ) {
       issues.push('Alt text contains redundant phrases like "image of" or "picture of"');
-      score -= 10;
+      score -= 50;
     }
     
     // Check for file extension mentions
@@ -345,7 +345,7 @@ function analyzeAltTextQuality(altText, imageContext) {
       altText.toLowerCase().includes('.webp')
     ) {
       issues.push('Alt text contains file extensions');
-      score -= 15;
+      score -= 40;
     }
     
     // Check for context relevance if context is provided
@@ -369,7 +369,9 @@ function analyzeAltTextQuality(altText, imageContext) {
   
   // Determine quality level
   let quality;
-  if (score >= 90) {
+  if (!altText || altText.trim() === '' || altText.trim().length < 5) {
+    quality = 'poor';
+  } else if (score >= 90) {
     quality = 'excellent';
   } else if (score >= 70) {
     quality = 'good';
@@ -432,4 +434,9 @@ function generateSuggestions(issues, altText) {
   }
   
   return suggestions;
-} 
+}
+
+// Export helper functions for testing
+module.exports.generateMockAltText = generateMockAltText;
+module.exports.isDecorativeImage = isDecorativeImage;
+module.exports.analyzeAltTextQuality = analyzeAltTextQuality; 

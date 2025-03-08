@@ -28,7 +28,7 @@ const logger = pino({
 
 // Initialize Express app
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5002;
 
 // Configure file upload storage
 const storage = multer.diskStorage({
