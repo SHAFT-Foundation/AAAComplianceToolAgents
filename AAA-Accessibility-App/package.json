@@ -1,0 +1,30 @@
+{
+  "name": "aaa-accessibility-app",
+  "version": "1.0.0",
+  "description": "AI-Driven Pipeline for WCAG 2.1 AAA Compliance",
+  "main": "index.js",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "start": "concurrently \"npm run start:backend\" \"npm run start:frontend\"",
+    "start:backend": "npm run start --workspace=backend",
+    "start:frontend": "npm run start --workspace=frontend",
+    "dev": "concurrently \"npm run dev --workspace=backend\" \"npm run dev --workspace=frontend\"",
+    "build": "concurrently \"npm run build --workspace=backend\" \"npm run build --workspace=frontend\"",
+    "test": "concurrently \"npm run test --workspace=backend\" \"npm run test --workspace=frontend\""
+  },
+  "keywords": [
+    "accessibility",
+    "WCAG",
+    "AAA",
+    "a11y"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+} 
