@@ -1,6 +1,8 @@
 # Web3 Accessibility Protocol (WAP): WCAG 2.1 AAA Compliance for Decentralized Applications
 
-> "The power of Web3 is in its universality and decentralization. Access by everyone regardless of disability is an essential aspect of true decentralization." - Inspired by Tim Berners-Lee
+> "The power of the Web is in its universality. Access by everyone regardless of disability is an essential aspect." - Tim Berners-Lee, W3C Director and inventor of the World Wide Web
+
+*The Web3 Accessibility Protocol extends this vision to the decentralized web, ensuring blockchain applications are accessible to all.*
 
 
 ![Backend Health Check](./AAA-Accessibility-App/images/backend-health-check.png)
@@ -10,25 +12,19 @@
 
 Check out our demo showcasing the Web3 Accessibility Protocol in action:
 
-<a href="./AAA-Accessibility-App/images/aaademo.mp4" title="Click to view full demo video">
-  <img src="./AAA-Accessibility-App/images/aaademo-thumb.gif" alt="Demo GIF" width="400" />
-</a>
+<!-- This animated GIF autoplays in GitHub -->
+![Full Demo GIF](./AAA-Accessibility-App/images/aaademo.gif)
+
+<!-- GitHub doesn't support direct video embedding with controls in README files, but these options provide alternatives -->
+
+**For a better viewing experience:**
+- **[▶️ Click here to view the video in GitHub's video player](./AAA-Accessibility-App/images/aaademo.mp4)**
+- **[⬇️ Download the MP4 video](./AAA-Accessibility-App/images/aaademo.mp4?raw=true)**
 
 <details>
-  <summary>Click to view full demo GIF</summary>
+  <summary>Why can't videos be directly embedded with controls in GitHub READMEs?</summary>
   
-  ![Full Demo GIF](./AAA-Accessibility-App/images/aaademo.gif)
-</details>
-
-<details>
-  <summary>Click to view full video demo</summary>
-  
-  <video width="100%" controls>
-    <source src="./AAA-Accessibility-App/images/aaademo.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-  
-  [Download Demo Video](./AAA-Accessibility-App/images/aaademo.mp4)
+  GitHub's Markdown renderer for README files doesn't support the HTML5 `<video>` tag or other video embedding methods with playback controls. The animated GIF above autoplays but has no controls, while clicking the video link will open GitHub's video player in a new page.
 </details>
 
 ## Why We Built This
