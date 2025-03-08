@@ -2,6 +2,11 @@
 
 > "The power of the Web is in its universality. Access by everyone regardless of disability is an essential aspect." - Tim Berners-Lee, W3C Director and inventor of the World Wide Web
 
+
+![Backend Health Check](images/Screenshot%202025-03-07%20at%209.51.43%20PM.png)
+![Frontend Interface](images/Screenshot%202025-03-07%20at%209.52.02%20PM.png)
+
+
 ## Why We Built This
 
 In a world where digital experiences are fundamental to daily life, true inclusion means ensuring everyone can access and use digital content, regardless of ability. The AAA Accessibility Compliance Tool was created with a simple yet powerful mission: to break down digital barriers and make the web truly accessible for all.
