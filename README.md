@@ -12,17 +12,20 @@
 
 Check out our demo showcasing the Web3 Accessibility Protocol in action:
 
-<!-- This animated GIF autoplays in GitHub with native resolution (640x352) -->
+<!-- This animated GIF autoplays in GitHub with native resolution (640x352) and maximum quality -->
 ![Full Demo GIF](./AAA-Accessibility-App/images/aaademo.gif)
 
 **For the highest quality experience:**
-- **[⬇️ Download the original MOV video](./AAA-Accessibility-App/images/aaademo.mov?raw=true)** (3.6MB, highest quality)
-- **[⬇️ Download the MP4 video](./AAA-Accessibility-App/images/aaademo.mp4?raw=true)** (1.1MB, high quality)
+- **[⬇️ Download the original MOV video](./AAA-Accessibility-App/images/aaademo.mov?raw=true)** (3.6MB, original source)
+- **[⬇️ Download the ultra-high quality MP4 video](./AAA-Accessibility-App/images/aaademo.mp4?raw=true)** (1.4MB, CRF 12, 5Mbps video, 1024kbps audio)
 
 <details>
-  <summary>Video not playing? Here's why</summary>
+  <summary>About the video quality</summary>
   
-  GitHub's Markdown renderer for README files doesn't support direct video embedding with playback controls. The animated GIF above autoplays but has no controls. For the best experience, download the original MOV file or the MP4 file and play it locally with your preferred video player.
+  We've preserved the highest possible quality in all formats:
+  - The GIF maintains the native 640x352 resolution with optimized color palette and advanced dithering
+  - The MP4 uses extremely high quality settings (CRF 12, 5Mbps video bitrate, 1024kbps audio)
+  - The original MOV file is provided for absolute maximum quality
 </details>
 
 ## Why We Built This
