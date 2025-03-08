@@ -12,17 +12,17 @@
 
 Check out our demo showcasing the Web3 Accessibility Protocol in action:
 
-<!-- This animated GIF autoplays in GitHub -->
+<!-- This animated GIF autoplays in GitHub with native resolution (640x352) -->
 ![Full Demo GIF](./AAA-Accessibility-App/images/aaademo.gif)
 
-**For a better viewing experience:**
-- **[⬇️ Download the high-resolution MP4 video](./AAA-Accessibility-App/images/aaademo.mp4?raw=true)** (2.4MB)
-- **[🔗 View on GitHub Assets](https://github.com/yourusername/web3-accessibility-protocol/blob/main/AAA-Accessibility-App/images/aaademo.mp4)** (Replace with your actual GitHub username)
+**For the highest quality experience:**
+- **[⬇️ Download the original MOV video](./AAA-Accessibility-App/images/aaademo.mov?raw=true)** (3.6MB, highest quality)
+- **[⬇️ Download the MP4 video](./AAA-Accessibility-App/images/aaademo.mp4?raw=true)** (1.1MB, high quality)
 
 <details>
   <summary>Video not playing? Here's why</summary>
   
-  GitHub's Markdown renderer for README files doesn't support direct video embedding with playback controls. The animated GIF above autoplays but has no controls. For the best experience, download the MP4 file and play it locally, or view it through GitHub's asset viewer by clicking the "View on GitHub Assets" link.
+  GitHub's Markdown renderer for README files doesn't support direct video embedding with playback controls. The animated GIF above autoplays but has no controls. For the best experience, download the original MOV file or the MP4 file and play it locally with your preferred video player.
 </details>
 
 ## Why We Built This
