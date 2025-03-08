@@ -1,4 +1,4 @@
-# WCAG 2.1 AAA Compliance Tool
+# WCAG 2.1 AAA AI Agent Compliance Tool
 
 > "The power of the Web is in its universality. Access by everyone regardless of disability is an essential aspect." - Tim Berners-Lee, W3C Director and inventor of the World Wide Web
 
