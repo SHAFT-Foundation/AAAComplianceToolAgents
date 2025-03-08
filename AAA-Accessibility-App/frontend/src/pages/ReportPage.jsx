@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
   Box,
@@ -26,6 +26,8 @@ import {
   Tooltip,
   LinearProgress,
   Link,
+  Switch,
+  FormControlLabel,
 } from '@mui/material';
 import {
   Check as CheckIcon,
@@ -44,10 +46,15 @@ import {
   Share as ShareIcon,
   Home as HomeIcon,
   Info as InfoIcon,
+  Verified as VerifiedIcon,
 } from '@mui/icons-material';
 import { useAccessibility } from '../context/AccessibilityContext';
 import { Chart as ChartJS, ArcElement, Tooltip as ChartTooltip, Legend } from 'chart.js';
 import { Pie } from 'react-chartjs-2';
+
+// Import Web3 components
+import BlockchainVerification from '../components/web3/BlockchainVerification';
+import { checkWeb3Availability } from '../services/blockchainService';
 
 // Register Chart.js components
 ChartJS.register(ArcElement, ChartTooltip, Legend);
@@ -62,6 +69,18 @@ const ReportPage = () => {
   } = useAccessibility();
   
   const [showDetails, setShowDetails] = useState(false);
+  const [web3Available, setWeb3Available] = useState(false);
+  const [showWeb3Verification, setShowWeb3Verification] = useState(false);
+
+  // Check if Web3 features are available
+  useEffect(() => {
+    const checkWeb3 = async () => {
+      const available = await checkWeb3Availability();
+      setWeb3Available(available);
+    };
+    
+    checkWeb3();
+  }, []);
 
   const handleStartNew = () => {
     resetProcess();
@@ -198,6 +217,26 @@ const ReportPage = () => {
       default:
         return status;
     }
+  };
+
+  // Prepare report data for blockchain verification
+  const prepareReportForVerification = () => {
+    return {
+      contentSummary: {
+        title: "Accessibility Compliance Report",
+        timestamp: new Date().toISOString(),
+        compliancePercentage,
+        issuesFixed: acceptedCount,
+        totalIssues,
+      },
+      wcagCompliance: {
+        level: "AAA",
+        passedCriteria: passedCriteria.map(c => c.id),
+        notApplicableCriteria: notApplicableCriteria.map(c => c.id),
+        failedCriteria: failedCriteria.map(c => c.id),
+      },
+      modifications: userModifications,
+    };
   };
 
   return (
@@ -552,6 +591,71 @@ const ReportPage = () => {
           </Paper>
         </Grid>
       </Grid>
+
+      {/* Download and Share Buttons */}
+      <Box sx={{ display: 'flex', justifyContent: 'space-between', mt: 4, mb: 4 }}>
+        <Box>
+          <Button 
+            variant="outlined" 
+            startIcon={<HomeIcon />} 
+            onClick={handleStartNew}
+            sx={{ mr: 2 }}
+          >
+            Start New Analysis
+          </Button>
+        </Box>
+        
+        <Box>
+          <Button 
+            variant="outlined" 
+            startIcon={<PrintIcon />} 
+            sx={{ mr: 2 }}
+            onClick={() => window.print()}
+          >
+            Print Report
+          </Button>
+          
+          <Button 
+            variant="outlined" 
+            startIcon={<DownloadIcon />} 
+            sx={{ mr: 2 }}
+          >
+            Download PDF
+          </Button>
+          
+          <Button 
+            variant="outlined" 
+            startIcon={<ShareIcon />}
+          >
+            Share Report
+          </Button>
+        </Box>
+      </Box>
+      
+      {/* Web3 Verification Section */}
+      {web3Available && (
+        <Box sx={{ mt: 4 }}>
+          <FormControlLabel
+            control={
+              <Switch
+                checked={showWeb3Verification}
+                onChange={(e) => setShowWeb3Verification(e.target.checked)}
+                color="primary"
+              />
+            }
+            label={
+              <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                <VerifiedIcon sx={{ mr: 1 }} />
+                <Typography variant="subtitle1">Enable Web3 Verification</Typography>
+              </Box>
+            }
+          />
+          
+          {showWeb3Verification && (
+            <BlockchainVerification report={prepareReportForVerification()} />
+          )}
+        </Box>
+      )}
     </Box>
   );
 };

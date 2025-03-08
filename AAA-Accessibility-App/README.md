@@ -1,13 +1,39 @@
-# WCAG 2.1 AAA Compliance Tool
+# Web3 Accessibility Protocol (WAP): WCAG 2.1 AAA Compliance for Decentralized Applications
 
-![Backend Health Check](images/Screenshot%202025-03-07%20at%209.51.43%20PM.png)
-![Frontend Interface](images/Screenshot%202025-03-07%20at%209.52.02%20PM.png)
+> "The power of Web3 is in its universality and decentralization. Access by everyone regardless of disability is an essential aspect of true decentralization." - Inspired by Tim Berners-Lee
 
-> "The power of the Web is in its universality. Access by everyone regardless of disability is an essential aspect." - Tim Berners-Lee, W3C Director and inventor of the World Wide Web
+
+![Backend Health Check](./AAA-Accessibility-App/images/backend-health-check.png)
+![Frontend Interface](./AAA-Accessibility-App/images/frontend-interface.png)
+
+## Demo
+
+Check out our demo showcasing the Web3 Accessibility Protocol in action:
+
+<a href="./AAA-Accessibility-App/images/aaademo.mp4" title="Click to view full demo video">
+  <img src="./AAA-Accessibility-App/images/aaademo-thumb.gif" alt="Demo GIF" width="400" />
+</a>
+
+<details>
+  <summary>Click to view full demo GIF</summary>
+  
+  ![Full Demo GIF](./AAA-Accessibility-App/images/aaademo.gif)
+</details>
+
+<details>
+  <summary>Click to view full video demo</summary>
+  
+  <video width="100%" controls>
+    <source src="./AAA-Accessibility-App/images/aaademo.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  
+  [Download Demo Video](./AAA-Accessibility-App/images/aaademo.mp4)
+</details>
 
 ## Why We Built This
 
-In a world where digital experiences are fundamental to daily life, true inclusion means ensuring everyone can access and use digital content, regardless of ability. The AAA Accessibility Compliance Tool was created with a simple yet powerful mission: to break down digital barriers and make the web truly accessible for all.
+In a world where Web3 and decentralized applications are reshaping our digital landscape, true inclusion means ensuring everyone can access and use blockchain-based content, regardless of ability. The Web3 Accessibility Protocol was created with a simple yet powerful mission: to break down digital barriers and make decentralized applications truly accessible for all.
 
 People with disabilities face unnecessary obstacles online every day - from blind users unable to understand images without proper descriptions, to deaf users missing critical information in uncaptioned videos, to users with cognitive disabilities struggling with overly complex text. These barriers aren't just inconveniences; they represent real exclusion from essential services, information, and opportunities.
 

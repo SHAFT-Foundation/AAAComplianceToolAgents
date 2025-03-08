@@ -13,6 +13,7 @@ const altTextRoutes = require('./routes/altTextRoutes');
 const textRoutes = require('./routes/textRoutes');
 const mediaRoutes = require('./routes/mediaRoutes');
 const ariaRoutes = require('./routes/ariaRoutes');
+const blockchainRoutes = require('./routes/blockchainRoutes');
 
 // Initialize logger
 const logger = pino({
@@ -81,6 +82,7 @@ app.use('/api/alt-text', altTextRoutes);
 app.use('/api/text', textRoutes);
 app.use('/api/media', mediaRoutes);
 app.use('/api/aria', ariaRoutes);
+app.use('/api/blockchain', blockchainRoutes);
 
 // Upload endpoint
 app.post('/api/upload', upload.single('file'), (req, res) => {
@@ -131,7 +133,17 @@ app.post('/api/upload/multiple', upload.array('files', 10), (req, res) => {
 // Health check endpoint
 app.get('/api/health', (req, res) => {
   logger.info('Health check endpoint called');
-  res.status(200).json({ status: 'ok', timestamp: new Date().toISOString() });
+  
+  // Check Web3 connection if available
+  const web3Available = !!require('./blockchain/web3Service').web3;
+  
+  res.status(200).json({ 
+    status: 'ok', 
+    timestamp: new Date().toISOString(),
+    features: {
+      web3: web3Available ? 'connected' : 'not configured'
+    }
+  });
 });
 
 // Error handling middleware
@@ -157,4 +169,12 @@ app.use((err, req, res, next) => {
 app.listen(PORT, () => {
   logger.info(`Server running on port ${PORT}`);
   logger.info(`API available at http://localhost:${PORT}/api`);
+  
+  // Log Web3 status
+  const web3Service = require('./blockchain/web3Service');
+  if (web3Service.web3) {
+    logger.info('Web3 integration enabled');
+  } else {
+    logger.warn('Web3 integration disabled. Set ETHEREUM_RPC_URL to enable.');
+  }
 }); 
