@@ -15,16 +15,14 @@ Check out our demo showcasing the Web3 Accessibility Protocol in action:
 <!-- This animated GIF autoplays in GitHub -->
 ![Full Demo GIF](./AAA-Accessibility-App/images/aaademo.gif)
 
-<!-- GitHub doesn't support direct video embedding with controls in README files, but these options provide alternatives -->
-
 **For a better viewing experience:**
-- **[▶️ Click here to view the video in GitHub's video player](./AAA-Accessibility-App/images/aaademo.mp4)**
-- **[⬇️ Download the MP4 video](./AAA-Accessibility-App/images/aaademo.mp4?raw=true)**
+- **[⬇️ Download the high-resolution MP4 video](./AAA-Accessibility-App/images/aaademo.mp4?raw=true)** (2.4MB)
+- **[🔗 View on GitHub Assets](https://github.com/yourusername/web3-accessibility-protocol/blob/main/AAA-Accessibility-App/images/aaademo.mp4)** (Replace with your actual GitHub username)
 
 <details>
-  <summary>Why can't videos be directly embedded with controls in GitHub READMEs?</summary>
+  <summary>Video not playing? Here's why</summary>
   
-  GitHub's Markdown renderer for README files doesn't support the HTML5 `<video>` tag or other video embedding methods with playback controls. The animated GIF above autoplays but has no controls, while clicking the video link will open GitHub's video player in a new page.
+  GitHub's Markdown renderer for README files doesn't support direct video embedding with playback controls. The animated GIF above autoplays but has no controls. For the best experience, download the MP4 file and play it locally, or view it through GitHub's asset viewer by clicking the "View on GitHub Assets" link.
 </details>
 
 ## Why We Built This
